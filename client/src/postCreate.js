@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios'
 
-
+/* our post creation logic, it updates temporary state of the app with a blog post, creates it and renders it below */
 const PostCreate = () => {
   const [title, setTitle] = useState('');
 
@@ -15,6 +15,8 @@ const PostCreate = () => {
     setTitle('');
   };
 
+  
+  /* upon submission of this order are sending off the new state of the app */
   return ( <div>
     <form onSubmit={onSubmit}>
       <div className="form-group">

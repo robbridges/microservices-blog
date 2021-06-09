@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+
+/* this is the physical rendering of where we create a comment, when the submit button is placed any value typed into the input element is axiosed over to be rendered by react */
 const CommentCreate = ({postId,}) => {
   const [content, setContent] = useState('');
 
@@ -16,7 +18,7 @@ const CommentCreate = ({postId,}) => {
 
   
 
-
+  /* after we update the state of react with the comment we render it correctly */
   return ( 
   <div>
     <form onSubmit={onSubmit}>
