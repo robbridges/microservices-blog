@@ -5,7 +5,7 @@ import PostList from './PostList';
 
 
 
-
+/* App heirarchy, an input to create a post, our post create elemenet, posts, and any comments are contained in postList */
 const App = () => {
   return(
     <div className="container">

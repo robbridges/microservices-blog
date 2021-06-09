@@ -3,6 +3,8 @@ import axios from 'axios';
 import CommentCreate from './commentCreate';
 import CommentList from './CommentList';
 
+
+/* This is our combined post list we give it some style below, but the onsubmit creates a post and saves it value adding it to the post list */
 const PostList = () => {
   const [posts, setPosts] = useState({});
 
@@ -15,7 +17,7 @@ const PostList = () => {
   useEffect(() => {
    fetchPosts(); 
   }, []);
-
+  /* rendering each post and comment below */
   const renderedPosts = Object.values(posts).map(post => {
     return (
       <div 
