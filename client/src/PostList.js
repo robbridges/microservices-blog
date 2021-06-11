@@ -9,9 +9,13 @@ const PostList = () => {
   const [posts, setPosts] = useState({});
 
   const fetchPosts = async () => {
+    try {
     const res = await axios.get('http://localhost:4002/posts');
     
     setPosts(res.data);
+    } catch(error) {
+      console.log('there was an error');
+    }
   };
 
   useEffect(() => {
