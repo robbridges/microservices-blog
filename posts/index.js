@@ -13,8 +13,9 @@ const posts = {};
 app.get('/posts', (req, res) => {
   res.send(posts);
 });
+
 /* this is our post creation service, it sends off a post that is stored as an object to be later rendered into react, it also telepgraphs this information to our event bus */
-app.post('/posts', async (req, res) => {
+app.post('/posts/create', async (req, res) => {
   const id = randomBytes(4).toString('hex');
   const { title } = req.body;
 
@@ -23,7 +24,7 @@ app.post('/posts', async (req, res) => {
     title
   };
 
-  await axios.post('http://localhost:4005/events', {
+  await axios.post('http://event-bus-srv:4005/events', {
     type: 'PostCreated',
     data: {
       id, 
